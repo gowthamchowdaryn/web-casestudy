@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recycling Efficiency Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f7f6;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #2e7d32;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .log-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .log-form label {
+      font-weight: bold;
+    }
+
+    .log-form select {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .chart-container {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #recycling-info {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: #1b5e20;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Recycling Efficiency Tracker</h1>
+
+  <!-- Recycling Log Form -->
+  <form id="recycling-form" class="log-form">
+    <label for="material">Select Material Type:</label>
+    <select id="material">
+      <option value="" selected>Select Material</option>
+      <option value="Plastic">Plastic</option>
+      <option value="Paper">Paper</option>
+      <option value="Glass">Glass</option>
+      <option value="Metal">Metal</option>
+      <option value="Electronics">Electronics</option>
+    </select>
+  </form>
+
+  <!-- Recycling Information Display -->
+  <div id="recycling-info">Please select a material to see its recyclability.</div>
+
+  <!-- Chart Display -->
+  <div class="chart-container">
+    <h2>Recyclability Breakdown</h2>
+    <canvas id="recycling-chart" width="400" height="200"></canvas>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Recycling data for materials
+  const recyclingData = {
+    Plastic: 60,       // 60% recyclable
+    Paper: 90,         // 90% recyclable
+    Glass: 100,        // 100% recyclable
+    Metal: 100,        // 100% recyclable
+    Electronics: 70    // 70% recyclable
+  };
+
+  // Chart.js setup
+  const ctx = document.getElementById('recycling-chart').getContext('2d');
+  const recyclingChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Recyclable', 'Non-Recyclable'],
+      datasets: [{
+        label: 'Recyclability',
+        data: [100, 0], // Placeholder data
+        backgroundColor: ['#4caf50', '#ff5722']
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        }
+      }
+    }
+  });
+
+  // Handle dropdown selection
+  const materialDropdown = document.getElementById('material');
+  const recyclingInfoDisplay = document.getElementById('recycling-info');
+  const recyclingInfo = {
+    Plastic: "Most plastic can be recycled, but it depends on the type. PET and HDPE plastics are commonly recycled.",
+    Paper: "Nearly 90% of paper products can be recycled. Ensure they are clean and dry.",
+    Glass: "100% recyclable without losing quality. Avoid mixing with non-recyclable items.",
+    Metal: "Metals like aluminum and steel can be recycled indefinitely.",
+    Electronics: "Up to 70% of electronic components can be recycled. Dispose of them at e-waste centers."
+  };
+
+  materialDropdown.addEventListener('change', () => {
+    const selectedMaterial = materialDropdown.value;
+    if (selectedMaterial) {
+      const recyclable = recyclingData[selectedMaterial];
+      const nonRecyclable = 100 - recyclable;
+
+      // Update info text
+      recyclingInfoDisplay.textContent = recyclingInfo[selectedMaterial];
+
+
+      // Update chart data
+      recyclingChart.data.datasets[0].data = [recyclable, nonRecyclable];
+      recyclingChart.update();
+    } else {
+      recyclingInfoDisplay.textContent = 'Please select a material to see its recyclability.';
+    }
+  });
+</script>
+
+</body>
+</html>

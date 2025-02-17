@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #e8f5e9; Light green background */
+            background-image: url('cfback.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .carbon_footprint {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        .carbon_footprint h3 {
+            margin-bottom: 10px;
+            color: #388e3c; /* Dark green for headings */
+        }
+
+        .carbon_footprint input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .carbon_footprint select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .carbon_footprint button {
+            background-color: #388e3c; /* Green button */
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carbon_footprint button:hover {
+            background-color: #2e7d32;
+        }
+
+        .carbon_footprint .Emissions {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="carbon_footprint">
+        <h3>Carbon Footprint Calculator</h3>
+        <label for="distance">Distance Travelled (km):</label>
+        <input type="number" id="distance" placeholder="Enter distance (km)">
+        
+        <label for="mileage">Vehicle Mileage (km per liter):</label>
+        <input type="number" id="mileage" placeholder="Enter mileage (km/l)">
+
+        <label for="cars">Choose Fuel Type:</label>
+        <select name="cars" id="cars">
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Diesel">LPG</option>
+            <option value="Diesel">CNG</option>
+        </select>
+
+        <button>Calculate Emissions</button>
+        <h3 class="Emissions">Emissions: </h3>
+    </div>
+
+    <!-- Link the JavaScript file -->
+    <script src="cf1.js"></script>
+</body>
+</html>

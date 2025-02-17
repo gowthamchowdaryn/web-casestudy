@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recycling Efficiency Tracker</title>
+  
+  <style>
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #28a745;
+    color: white;
+  }
+  
+  main {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 0.7rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }
+  
+  #result {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  #score {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  #tips {
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
+  
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Recycling Efficiency Tracker</h1>
+    <p>Track your recycling habits and improve your efficiency!</p>
+  </header>
+
+  <main>
+    <section id="tracker">
+      <h2>Enter Your Weekly Recycling Data</h2>
+      <form id="recycling-form">
+        <label for="recycled">Recyclable Waste (kg):</label>
+        <input type="number" id="recycled" min="0" required>
+        
+        <label for="total">Total Waste (kg):</label>
+        <input type="number" id="total" min="0" required>
+        
+        <button type="submit">Calculate Efficiency</button>
+      </form>
+
+      <div id="result">
+        <h3>Your Recycling Efficiency</h3>
+        <p id="score"></p>
+        <p id="tips"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="recylce.js"></script>
+</body>
+</html>

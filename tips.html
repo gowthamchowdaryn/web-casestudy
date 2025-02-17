@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #8bf490;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+#card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 20px;
+  text-align: center;
+  width: 150px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+#tip-display {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 26px;
+  color:  #2c7a59;
+}
+.facts {
+  background-color: #f0f8f5;
+  border: 2px solid #87cba2;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.facts h2 {
+  color: #2c7a59;
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Ensure 4 items per row */
+  gap: 20px; /* Spacing between grid items */
+}
+
+@media (max-width: 768px) {
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 items per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .facts-grid {
+    grid-template-columns: repeat(1, 1fr); /* Adjust to 1 item per row on very small screens */
+  }
+}
+
+
+.fact-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fact-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.fact-item p {
+  color: #333;
+  font-size: 1em;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.fact-item p strong {
+  color: #2c7a59;
+}
+
+.fact-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  background-color: #e8f5ec;
+}
+.fact-item img {
+  width: 100%; /* Ensure the image takes full width of the container */
+  height: auto; /* Maintain the aspect ratio of the image */
+  border-radius: 10px; /* Smooth rounded corners for a polished look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth hover effects */
+}
+
+.fact-item img:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sustainability Tips Generator</h1>
+    <p>Get personalized advice for eco-friendly living!</p>
+  </header>
+
+  <main>
+    <section id="tips-generator">
+      <h2>Your Personalized Sustainability Tip</h2>
+      
+      
+      <div id="card-container">
+        <div class="card" data-interest="energy">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a2 2 0 0 0-.453-.618A5.98 5.98 0 0 1 2 6m6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1"/>
+          </svg>
+          <p>Energy Saving</p>
+          
+        </div>
+        <div class="card" data-interest="water">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-droplet-fill" viewBox="0 0 16 16">
+            <path d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6M6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13"/>
+          </svg>
+          <p>Water Conversation</p>
+        </div>
+        <div class="card" data-interest="home">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-house-check-fill" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+            <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.707l.547.547 1.17-1.951a.5.5 0 1 1 .858.514"/>
+          </svg>
+          <p>Eco-friendly <br>home</p>
+        </div>
+        <div class="card" data-interest="transportation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-ev-front" viewBox="0 0 16 16">
+            <path d="M9.354 4.243a.19.19 0 0 0-.085-.218.186.186 0 0 0-.23.034L6.051 7.246a.188.188 0 0 0 .136.316h1.241l-.673 2.195a.19.19 0 0 0 .085.218c.075.043.17.03.23-.034l2.88-3.187a.188.188 0 0 0-.137-.316H8.572z"/>
+            <path d="M4.819 2A2.5 2.5 0 0 0 2.52 3.515l-.792 1.848a.8.8 0 0 1-.38.404c-.5.25-.855.715-.965 1.262L.05 8.708a2.5 2.5 0 0 0-.049.49v.413c0 .814.39 1.543 1 1.997V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.338c1.292.048 2.745.088 4 .088s2.708-.04 4-.088V13.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1.892c.61-.454 1-1.183 1-1.997v-.413q0-.248-.049-.49l-.335-1.68a1.8 1.8 0 0 0-.964-1.261.8.8 0 0 1-.381-.404l-.792-1.848A2.5 2.5 0 0 0 11.181 2H4.82ZM3.44 3.91A1.5 1.5 0 0 1 4.82 3h6.362a1.5 1.5 0 0 1 1.379.91l.792 1.847a1.8 1.8 0 0 0 .853.904c.222.112.381.32.43.564l.336 1.679q.03.146.029.294v.413a1.48 1.48 0 0 1-1.408 1.484c-1.555.07-3.786.155-5.592.155s-4.037-.084-5.592-.155A1.48 1.48 0 0 1 1 9.611v-.413q0-.148.03-.294l.335-1.68a.8.8 0 0 1 .43-.563c.383-.19.685-.511.853-.904z"/>
+          </svg>
+          <p>sustainable Transportation</p>
+        </div>
+      
+      </div>
+      <div id="tip-display" aria-live="polite">
+        Click on a category above to get your personalized tip.
+      </div>
+    </section>
+
+    <div class="facts">
+      <h2>Environmental Sustainability Facts</h2>
+      <div class="facts-grid">
+        <div class="fact-item">
+          <img src="r1.jpg" alt="Resource Usage" />
+          <p><strong>Resource Usage:</strong> Humanity uses the equivalent of <strong>1.7 Earths</strong> annually to meet global resource demands.</p>
+        </div>
+        <div class="fact-item">
+          <img src="r2.jpg" alt="Biodiversity Loss" />
+          <p><strong>Biodiversity Loss:</strong> <strong>1 million species</strong> are at risk of extinction due to human activities.</p>
+        </div>
+        <div class="fact-item">
+          <img src="r3.jpg" alt="Renewable Energy" />
+          <p><strong>Renewable Energy:</strong> Renewable sources now provide <strong>29%</strong> of global electricity.</p>
+        </div>
+        <div class="fact-item">
+          <img src="r4.jpg" alt="Plastic Pollution" />
+          <p><strong>Plastic Pollution:</strong> <strong>8 million tons</strong> of plastic enter the oceans each year.</p>
+        </div>
+        <!-- Additional 4 Facts -->
+        <div class="fact-item">
+          <img src="r5.jpg" alt="E-Waste Recycling" />
+          <p><strong>E-Waste Recycling:</strong> Only <strong>20%</strong> of the <strong>50 million tons</strong> of electronic waste is recycled each year.</p>
+        </div>
+        <div class="fact-item">
+          <img src="r7.jpg" alt="Tree Benefits" />
+          <p><strong>Tree Benefits:</strong> One mature tree can absorb <strong>48 pounds of CO₂</strong> annually, contributing to cleaner air.</p>
+        </div>
+        <div class="fact-item">
+          <img src="r6.jpg" alt="Deforestation Impact" />
+          <p><strong>Deforestation Impact:</strong> Agriculture drives <strong>80%</strong> of global deforestation, affecting ecosystems worldwide.</p>
+        </div>
+       
+        <div class="fact-item">
+          <img src="r8.jpg" alt="Food Waste" />
+          <p><strong>Food Waste:</strong> <strong>1.3 billion tons</strong> of food are wasted annually, contributing significantly to greenhouse gas emissions.</p>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+  </main>
+
+  <script src="tips.js"></script>
+</body>
+</html>

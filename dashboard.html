@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Insights Dashboard</title>
+    <style>
+      
+      html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure body and html take up full viewport height */
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #333;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Header */
+h1 {
+  font-size: 2.8rem;
+  color: #08710eb1;
+  margin-bottom: 20px;
+}
+
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links a {
+  display: block;
+  width: 200px;
+  text-decoration: none;
+  color: #08710eb1;
+  font-size: large;
+  font-weight: bold;
+  /* background-color: #F5F5DC; */
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.links a:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+  color: whitesmoke;
+  /* transform: rotate(10deg); */
+}
+
+.links img {
+  display: block;
+  margin: 10px auto;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.links img:hover {
+  transform: rotate(10deg);
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  padding: 10px 0;
+  background-color: #2e7d32;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .links a {
+    width: 90%;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sustainability Insights Dashboard</h1>
+        <div class="links">
+            <a href="cf1.html">Carbon Footprint on Vehicles<img style="border-radius: 50%;" src="cf2.jpg" alt=""></a>
+            <a href="cfp2.html">Carbon Footprint in Household <img style="border-radius: 50%;" src="cf.jpg" alt=""></a>           
+            <a href="rec2.html">Recycling Efficiency Management of materials<img style="border-radius: 50%;" src="img9.jpg" alt=""></a>
+            <a href="recycle.html">Recycling Efficiency Management <img style="border-radius: 50%;" src="img5.jpg" alt=""></a>
+            <a href="tips.html">Sustainability <br>Tips & Facts <img style="border-radius: 50%;"src="img4.jpg" alt=""></a>
+        </div>
+        <footer>
+            project by Team: Tech Titans
+        </footer>
+    </div>
+</body>
+</html>
